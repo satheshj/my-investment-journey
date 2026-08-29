@@ -1,0 +1,10 @@
+.next
+out
+coverage
+node_modules
+playwright-report
+test-results
+design
+spade-design
+.agents
+*.md
