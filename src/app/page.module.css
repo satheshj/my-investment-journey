@@ -140,8 +140,11 @@
   gap: clamp(4rem, 10vw, 9rem);
 }
 
-.timeline {
+.timelineShell {
   position: relative;
+}
+
+.timeline {
   display: grid;
   margin: 0;
   padding: 0 0 0 clamp(2rem, 5vw, 5rem);
@@ -149,14 +152,13 @@
   list-style: none;
 }
 
-.timeline::before {
+.timelineTrack {
   position: absolute;
   top: 0;
   bottom: 0;
   left: 0;
   width: 1px;
   background: var(--color-hairline);
-  content: "";
 }
 
 .timeline li {
@@ -237,6 +239,19 @@
 .publicationSummary p {
   max-width: 34rem;
   color: var(--color-muted);
+}
+
+.publicationPolicy {
+  display: grid;
+  grid-template-columns: minmax(7rem, auto) minmax(0, 1fr);
+  margin-block-start: var(--space-4);
+  gap: var(--space-4);
+  font-size: 0.875rem;
+}
+
+.publicationPolicy span {
+  color: var(--color-ink);
+  font-weight: 600;
 }
 
 .publicationRequirements {
@@ -550,44 +565,6 @@
   line-height: 1.5;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .heroInner {
-    animation: hero-enter 620ms var(--ease-standard) both;
-  }
-
-  @supports (animation-timeline: view()) {
-    .chapter > div {
-      animation: chapter-enter linear both;
-      animation-range: entry 8% cover 26%;
-      animation-timeline: view();
-    }
-  }
-}
-
-@keyframes hero-enter {
-  from {
-    opacity: 0;
-    transform: translateY(18px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes chapter-enter {
-  from {
-    opacity: 0.72;
-    transform: translateY(24px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
 @media (max-width: 64rem) {
   .startingInner,
   .buildInner {
@@ -643,6 +620,11 @@
 
   .timeline {
     padding-inline-start: var(--space-8);
+  }
+
+  .publicationPolicy {
+    grid-template-columns: 1fr;
+    gap: var(--space-1);
   }
 
   .publicationState,

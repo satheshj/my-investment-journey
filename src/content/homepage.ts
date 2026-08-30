@@ -1,4 +1,4 @@
-import { publicPortfolioDataset } from "@/data/portfolio/public-dataset";
+import { publishedPortfolioAllocation } from "@/data/portfolio/published-allocation";
 
 export const startingContext = [
   {
@@ -16,13 +16,16 @@ export const startingContext = [
 ] as const;
 
 export const portfolioPublication = {
-  hasPublishedSnapshot: publicPortfolioDataset.snapshots.length > 0,
-  instrumentCount: publicPortfolioDataset.instruments.length,
-  status: "Waiting for a verified snapshot",
-  requirements: [
-    "A dated portfolio snapshot",
-    "An explicit currency basis",
-    "Source and completeness context",
+  asOf: "26 August 2026",
+  disclosure: "Allocation percentages only",
+  hasPublishedSnapshot: publishedPortfolioAllocation.holdings.length > 0,
+  hiddenFields: "Quantities, prices, cost basis, and monetary values",
+  instrumentCount: publishedPortfolioAllocation.holdings.length,
+  status: "Verified allocation published",
+  verification: [
+    "Snapshot date verified",
+    "INR calculation basis recorded",
+    "Source completeness confirmed",
   ],
 } as const;
 
