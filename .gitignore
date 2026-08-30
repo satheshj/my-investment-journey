@@ -1,5 +1,6 @@
 # Private financial source files
 /private/imports/
+/docs/holdings/
 
 # Local secrets
 .env*

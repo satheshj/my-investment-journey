@@ -20,6 +20,10 @@ _Avoid_: Account, watchlist
 A dated record of the portfolio and its values at a particular point in time. It does not imply how the portfolio reached that state.
 _Avoid_: Portfolio history, transaction history
 
+**Published Allocation Snapshot**:
+A dated, privacy-preserving projection of a verified Portfolio Snapshot containing allocation percentages and public instrument facts, but no account-scale monetary facts.
+_Avoid_: Portfolio Snapshot, public source of truth
+
 **Holding Snapshot**:
 The recorded quantity, cost basis, market value, and strategy classification of one holding within a Portfolio Snapshot.
 _Avoid_: Asset record, transaction

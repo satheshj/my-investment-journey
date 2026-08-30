@@ -86,15 +86,17 @@ The initial HTML must contain the chapter's complete meaning. Animation and inte
 |   |-- architecture.md
 |   |-- data-contracts.md
 |   |-- design.md
+|   |-- holdings/                # local-only, gitignored raw exports
 |   |-- adr/
 |   `-- build-log/
 |-- private/
-|   `-- imports/                 # local-only, gitignored raw exports
+|   `-- imports/                 # optional local-only import staging
 |-- public/
 |   |-- images/
 |   `-- fonts/
 |-- scripts/
-|   `-- import-portfolio/
+|   |-- import-holdings.mjs
+|   `-- portfolio-import.config.mjs
 |-- src/
 |   |-- app/
 |   |   |-- page.tsx
@@ -114,7 +116,7 @@ The initial HTML must contain the chapter's complete meaning. Animation and inte
 |   |-- data/
 |   |   `-- portfolio/
 |   |       |-- instruments.json
-|   |       `-- snapshots/
+|   |       `-- published-allocation.json
 |   |-- domain/
 |   |   |-- portfolio/
 |   |   `-- journal/
@@ -155,7 +157,7 @@ Enhances already meaningful presentation. It may read rendered geometry and scro
 
 ### Structured financial data
 
-Curated financial facts live under `src/data/portfolio/` and follow `docs/data-contracts.md`. Raw exports never become application inputs directly.
+Public Instrument facts and generated publication artifacts live under `src/data/portfolio/` and follow `docs/data-contracts.md`. Raw exports are read only by source-specific importers and never become runtime application inputs.
 
 ### Authored content
 
@@ -180,19 +182,19 @@ normalized candidate snapshot
 Zod validation + domain invariants
        |
        v
-human-readable import diff
+percentage derivation + privacy projection
        |
        v
-committed curated snapshot
+human review
        |
        v
-pure selectors and derivations
+committed Published Allocation Snapshot
        |
        v
 page and visualization view models
 ```
 
-The import workflow must stop before writing committed data when validation fails. It must never silently coerce an unknown currency, instrument, or status into a plausible value.
+The private normalized candidate remains local. The import workflow must stop before writing a publication artifact when validation fails. It must never silently coerce an unknown currency, instrument, strategy classification, or date into a plausible value.
 
 ## 9. State management
 
@@ -262,9 +264,9 @@ These constraints are intentional and acceptable for the current product.
 
 ## 14. Privacy and source hygiene
 
-- Raw brokerage or portfolio exports live under `private/imports/` and are gitignored.
+- Raw brokerage or portfolio exports live under `docs/holdings/` or `private/imports/` and are gitignored.
 - Importers remove account identifiers, names, email addresses, and irrelevant metadata.
-- Only reviewed normalized data may enter `src/data/portfolio/`.
+- Private normalized candidates remain local. Only reviewed public Instrument facts and generated Published Allocation Snapshots may enter `src/data/portfolio/`.
 - Source references stored in public data must be non-sensitive identifiers, never local absolute paths.
 - Secrets and API keys never appear in content, fixtures, screenshots, build logs, or client bundles.
 - Test fixtures use invented financial values and are labelled as fixtures; they must never appear as published portfolio data.
@@ -307,14 +309,15 @@ The continuous verification path should include formatting, linting, TypeScript,
 
 ## 17. Update workflow
 
-1. Place a new export in the ignored private import directory.
+1. Place a new export in an ignored private import directory.
 2. Run the source-specific importer.
-3. Review validation errors and the generated diff.
+3. Review validation errors and the generated publication artifact.
 4. Confirm new Instruments and strategy classifications manually.
-5. Commit the normalized Portfolio Snapshot.
-6. Add or update genuine decisions and reflections separately.
-7. Run the complete verification path.
-8. Deploy the new static build.
+5. Confirm that allocation totals and privacy checks pass.
+6. Commit the Published Allocation Snapshot. Keep its monetary source local.
+7. Add or update genuine decisions and reflections separately.
+8. Run the complete verification path.
+9. Deploy the new static build.
 
 This keeps portfolio facts auditable while allowing the narrative to evolve at a different pace.
 

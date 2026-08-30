@@ -1,0 +1,54 @@
+{
+  "schemaVersion": 1,
+  "id": "portfolio-allocation-2026-08-26",
+  "asOf": "2026-08-26",
+  "calculationCurrency": "INR",
+  "completeness": "complete",
+  "calculationBasis": {
+    "method": "base_currency_market_value",
+    "fx": [
+      {
+        "asOf": "2026-08-25",
+        "fromCurrency": "USD",
+        "sourceLabel": "MSEI reference-rate archive",
+        "sourceUrl": "https://beta.msei.in/markets/Currency/Historical-Data/RBIReferenceRateArchives",
+        "toCurrency": "INR"
+      }
+    ]
+  },
+  "holdings": [
+    {
+      "allocationPercent": "50.98",
+      "instrumentId": "uti-nifty-50-index-fund",
+      "strategyBucket": "core"
+    },
+    {
+      "allocationPercent": "25.06",
+      "instrumentId": "vanguard-sp-500-etf",
+      "strategyBucket": "core"
+    },
+    {
+      "allocationPercent": "13.30",
+      "instrumentId": "nvidia",
+      "strategyBucket": "experimental"
+    },
+    {
+      "allocationPercent": "10.66",
+      "instrumentId": "ge-vernova",
+      "strategyBucket": "experimental"
+    }
+  ],
+  "provenance": {
+    "generator": "portfolio-import-v1",
+    "sources": [
+      {
+        "label": "mutual-funds-export",
+        "sha256": "a46f7409f06f139973dfe3a299509b66667bb884ff54782c3cf226290a1b0071"
+      },
+      {
+        "label": "us-portfolio-export",
+        "sha256": "c5e816e66e6c6e57fedd90e4ef9c1021e9e7a7d3fa5dc7cae36bd057c5c77d02"
+      }
+    ]
+  }
+}

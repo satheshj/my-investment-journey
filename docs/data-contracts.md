@@ -1,7 +1,7 @@
 ---
 title: Financial and Journal Data Contracts
 status: accepted
-updated: 2026-08-27
+updated: 2026-08-30
 domain_language: ../CONTEXT.md
 architecture_source: ./architecture.md
 ---
@@ -292,7 +292,7 @@ An investment story may reference one or more Decision and Reflection IDs. The b
 
 ## 12. Derived view models
 
-Derived models are created by pure functions after validation. They are not persisted as competing sources of truth.
+Derived models are created by pure functions after validation. They are not persisted as competing sources of truth. A reviewed Published Allocation Snapshot may be committed as a publication artifact when its private source remains local. That artifact is generated, not hand-edited, and its provenance identifies the source inputs without exposing them.
 
 Initial selectors:
 
@@ -395,6 +395,20 @@ Raw exports may contain information that is not needed by the product. Importers
 - unrelated cash or tax metadata unless a future product requirement explicitly needs it
 
 Only the minimum facts required for the published journey belong in committed data.
+
+### Public portfolio disclosure
+
+The public portfolio exposes allocation percentages only. Quantities, prices, cost basis,
+market values, invested totals, and profit and loss amounts remain private.
+
+Allocation percentages are still derived from the validated monetary facts inside a dated
+snapshot. They are never entered or edited as a second source of truth. Public view models
+must remove private monetary fields before data crosses into a Client Component.
+
+Raw exports and normalized monetary candidates remain in ignored local paths. A committed
+Published Allocation Snapshot may contain the dated percentage result, public Instrument
+facts, a calculation-basis description without the FX rate itself, and source fingerprints.
+It must not contain quantities, prices, costs, balances, market values, or profit and loss.
 
 ## 17. Initial implementation order
 
