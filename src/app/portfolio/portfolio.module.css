@@ -9,6 +9,7 @@
 
 .heroInner,
 .snapshotStrip,
+.portfolioEditorial,
 .allocationSection,
 .strategySection,
 .geographySection,
@@ -86,6 +87,39 @@
   color: var(--color-ink);
   font-size: 0.95rem;
   font-weight: 550;
+}
+
+.portfolioEditorial {
+  display: grid;
+  margin-block: clamp(4rem, 8vw, 7rem) 0;
+  gap: var(--space-3);
+}
+
+.portfolioEditorial > div {
+  overflow: hidden;
+  aspect-ratio: 16 / 9;
+  border: 1px solid var(--color-hairline-soft);
+  background: var(--color-surface);
+}
+
+.portfolioEditorial img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 700ms var(--ease-standard);
+}
+
+.portfolioEditorial:hover img {
+  transform: scale(1.025);
+}
+
+.portfolioEditorial figcaption {
+  max-width: 42rem;
+  color: var(--color-muted);
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.02em;
 }
 
 .allocationSection,

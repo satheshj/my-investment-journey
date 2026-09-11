@@ -13,6 +13,7 @@
 /coverage/
 /playwright-report/
 /test-results/
+/.playwright-mcp/
 debug.log
 
 # Tool caches

@@ -17,6 +17,9 @@ describe("PortfolioPage", () => {
     expect(container.querySelector('[data-motion-scope="portfolio"]')).not.toBeNull();
     expect(container.querySelectorAll("[data-portfolio-segment]")).toHaveLength(4);
     expect(container.querySelectorAll("[data-portfolio-holding]")).toHaveLength(4);
+    expect(
+      screen.getByRole("img", { name: /four unequal fields of tactile paper squares/i }),
+    ).toBeVisible();
   });
 
   it("shows strategy and geography summaries that each total 100 percent", () => {

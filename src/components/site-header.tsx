@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useCallback, useEffect, useRef, useState } from "react";
 
 import styles from "./site-header.module.css";
 
@@ -15,9 +16,65 @@ const routes = [
 
 export function SiteHeader() {
   const pathname = usePathname();
+  const idleTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const [isActive, setIsActive] = useState(true);
+
+  const clearIdleTimer = useCallback(() => {
+    if (idleTimer.current) {
+      clearTimeout(idleTimer.current);
+      idleTimer.current = null;
+    }
+  }, []);
+
+  const showHeader = useCallback(() => {
+    clearIdleTimer();
+    setIsActive(true);
+  }, [clearIdleTimer]);
+
+  const queueHeaderFade = useCallback(() => {
+    clearIdleTimer();
+
+    if (
+      window.scrollY <= 8 ||
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches
+    ) {
+      setIsActive(true);
+      return;
+    }
+
+    idleTimer.current = setTimeout(() => setIsActive(false), 900);
+  }, [clearIdleTimer]);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      showHeader();
+      queueHeaderFade();
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+
+    if (
+      window.scrollY > 8 &&
+      !window.matchMedia("(prefers-reduced-motion: reduce)").matches
+    ) {
+      idleTimer.current = setTimeout(() => setIsActive(false), 900);
+    }
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      clearIdleTimer();
+    };
+  }, [clearIdleTimer, queueHeaderFade, showHeader]);
 
   return (
-    <header className={styles.header}>
+    <header
+      className={`${styles.header} ${isActive ? styles.headerActive : styles.headerIdle}`}
+      data-scroll-state={isActive ? "active" : "idle"}
+      onBlur={queueHeaderFade}
+      onFocus={showHeader}
+      onPointerEnter={showHeader}
+      onPointerLeave={queueHeaderFade}
+    >
       <div className={styles.inner}>
         <Link className={styles.wordmark} href="/">
           My Investment Journey

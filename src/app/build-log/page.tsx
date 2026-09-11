@@ -1,5 +1,7 @@
+import Image from "next/image";
 import type { Metadata } from "next";
 
+import interfaceProcessImage from "@/assets/images/build-log/interface-process.webp";
 import { PageIntro } from "@/components/page-intro";
 
 import styles from "../section-page.module.css";
@@ -25,6 +27,21 @@ export default function BuildLogPage() {
         </p>
       </PageIntro>
       <section className={styles.content} aria-label="Build milestones">
+        <figure className={styles.routeFigure}>
+          <div>
+            <Image
+              alt="Paper interface wireframes, geometric components, a ruler, and red thread arranged as a build sequence."
+              height={941}
+              sizes="(max-width: 80rem) 100vw, 80rem"
+              src={interfaceProcessImage}
+              width={1672}
+            />
+          </div>
+          <figcaption>
+            Product judgment, interface structure, and verification stay part of the
+            record.
+          </figcaption>
+        </figure>
         <ol className={styles.list}>
           {milestones.map((milestone) => (
             <li key={milestone.title}>

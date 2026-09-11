@@ -1,7 +1,9 @@
 import type { CSSProperties } from "react";
 import Decimal from "decimal.js";
+import Image from "next/image";
 import type { Metadata } from "next";
 
+import publicAllocationImage from "@/assets/images/portfolio/public-allocation.webp";
 import { PortfolioMotion } from "@/components/portfolio-motion";
 import { publishedPortfolioAllocation } from "@/data/portfolio/published-allocation";
 
@@ -92,6 +94,21 @@ export default function PortfolioPage() {
             <dd>Allocation percentages only</dd>
           </div>
         </dl>
+
+        <figure className={styles.portfolioEditorial} data-portfolio-editorial>
+          <div>
+            <Image
+              alt="Four unequal fields of tactile paper squares connected by a red thread."
+              height={941}
+              sizes="(max-width: 80rem) 100vw, 80rem"
+              src={publicAllocationImage}
+              width={1672}
+            />
+          </div>
+          <figcaption>
+            Four holdings, grouped without exposing the account values beneath them.
+          </figcaption>
+        </figure>
 
         <section
           className={styles.allocationSection}

@@ -29,6 +29,13 @@ export const portfolioPublication = {
   ],
 } as const;
 
+export const portfolioAllocations = publishedPortfolioAllocation.holdings.map(
+  (holding) => ({
+    allocationPercent: holding.allocationPercent,
+    name: holding.name,
+  }),
+);
+
 export const strategyProgression = [
   {
     title: "Experimentation",
@@ -78,24 +85,43 @@ export const reflectionContract = [
 
 export const learningTopics = [
   {
-    title: "Diversification",
-    body: "How broad-market exposure changes the role of individual stocks.",
+    title: "Monthly consistency",
+    status: "Current approach",
+    body: "Building a repeatable investing habit before trying to optimize every allocation.",
   },
   {
-    title: "Index investing",
-    body: "How Nifty 50 and VOO could support a long-term core allocation.",
+    title: "India beyond Nifty 50",
+    status: "Open question",
+    body: "Researching broader large- and mid-cap exposure without presenting a future choice as settled.",
   },
   {
-    title: "Thematic risk",
-    body: "How to research space and defence exposure without confusing interest with conviction.",
+    title: "Space and defence",
+    status: "Research interest",
+    body: "Testing a picks-and-shovels thesis without confusing a compelling theme with evidence of returns.",
   },
   {
-    title: "Evidence discipline",
-    body: "How to separate current holdings, planned strategy, and research ideas.",
+    title: "Cash and currency",
+    status: "Still learning",
+    body: "Separating useful liquidity from idle cash while learning what global currency exposure changes.",
   },
 ] as const;
 
 export const buildMilestones = [
+  {
+    title: "Signature motion",
+    evidence:
+      "Turned portfolio allocation and strategy evolution into pinned, scrubbed narrative states with static mobile and reduced-motion fallbacks.",
+  },
+  {
+    title: "First learning note",
+    evidence:
+      "Published the real beginner framework behind monthly investing, fund preference, open allocation questions, and thematic research.",
+  },
+  {
+    title: "Editorial imagery",
+    evidence:
+      "Generated and integrated a restrained paper-collage system without introducing fictional financial claims.",
+  },
   {
     title: "Design system",
     evidence:

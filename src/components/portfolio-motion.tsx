@@ -66,6 +66,7 @@ export function PortfolioMotion({ children }: PortfolioMotionProps) {
           "[data-portfolio-strategy]",
           "[data-portfolio-geography]",
           "[data-portfolio-disclosure]",
+          "[data-portfolio-editorial]",
         ];
 
         revealGroups.forEach((selector) => {

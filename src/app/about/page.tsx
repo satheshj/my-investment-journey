@@ -1,5 +1,7 @@
+import Image from "next/image";
 import type { Metadata } from "next";
 
+import learningInPublicImage from "@/assets/images/about/learning-in-public.webp";
 import { PageIntro } from "@/components/page-intro";
 
 import styles from "../section-page.module.css";
@@ -19,6 +21,20 @@ export default function AboutPage() {
         </p>
       </PageIntro>
       <section className={styles.content} aria-labelledby="about-position">
+        <figure className={styles.routeFigure}>
+          <div>
+            <Image
+              alt="A blank notebook, pencil, paper circles, and a red thread beside an understated laptop."
+              height={1024}
+              sizes="(max-width: 80rem) 100vw, 80rem"
+              src={learningInPublicImage}
+              width={1536}
+            />
+          </div>
+          <figcaption>
+            A modest beginning: one notebook, an unfinished framework, and room to revise.
+          </figcaption>
+        </figure>
         <div className={styles.contentNarrow}>
           <h2 id="about-position">Learning without pretending authority</h2>
           <p>

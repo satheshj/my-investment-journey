@@ -9,6 +9,39 @@
   padding: 0 var(--page-gutter) var(--chapter-space);
 }
 
+.routeFigure {
+  display: grid;
+  margin: 0 0 clamp(5rem, 10vw, 9rem);
+  gap: var(--space-3);
+}
+
+.routeFigure > div {
+  overflow: hidden;
+  aspect-ratio: 16 / 9;
+  border: 1px solid var(--color-hairline-soft);
+  background: var(--color-surface);
+}
+
+.routeFigure img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 700ms var(--ease-standard);
+}
+
+.routeFigure:hover img {
+  transform: scale(1.025);
+}
+
+.routeFigure figcaption {
+  max-width: 42rem;
+  color: var(--color-muted);
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.02em;
+}
+
 .contentNarrow {
   max-width: var(--reading-max);
 }
