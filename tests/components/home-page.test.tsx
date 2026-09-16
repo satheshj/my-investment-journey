@@ -27,7 +27,7 @@ describe("HomePage", () => {
     expect(container.querySelectorAll("[data-motion-home-allocation-tile]")).toHaveLength(
       100,
     );
-    expect(container.querySelectorAll("[data-motion-allocation-row]")).toHaveLength(4);
+    expect(container.querySelectorAll("[data-motion-allocation-row]")).toHaveLength(6);
   });
 
   it("uses meaningful editorial imagery without embedding financial claims", () => {
@@ -58,7 +58,7 @@ describe("HomePage", () => {
     expect(screen.getAllByText("Research interest")).toHaveLength(2);
     expect(
       screen.getByText(
-        "These are strategy directions and research interests. They are not a list of current holdings.",
+        "These describe strategy roles and research themes. The verified snapshot above remains the source of truth for current holdings.",
       ),
     ).toBeVisible();
   });

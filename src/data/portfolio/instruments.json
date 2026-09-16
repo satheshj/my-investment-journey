@@ -14,6 +14,23 @@
     "tradingCurrency": "USD"
   },
   {
+    "id": "motilal-oswal-nifty-india-defence-etf",
+    "name": "Motilal Oswal Nifty India Defence ETF",
+    "symbol": "MODEFENCE",
+    "instrumentType": "etf",
+    "listingCountry": "IN",
+    "exchange": "NSE",
+    "tradingCurrency": "INR"
+  },
+  {
+    "id": "procure-space-etf",
+    "name": "Procure Space ETF",
+    "symbol": "UFO",
+    "instrumentType": "etf",
+    "listingCountry": "US",
+    "tradingCurrency": "USD"
+  },
+  {
     "id": "uti-nifty-50-index-fund",
     "name": "UTI Nifty 50 Index Fund",
     "instrumentType": "mutual_fund",

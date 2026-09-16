@@ -137,7 +137,7 @@ export default function HomePage() {
                 </div>
                 <div>
                   <dt>Published view</dt>
-                  <dd>Four holdings · 100%</dd>
+                  <dd>{portfolioPublication.instrumentCount} holdings · 100%</dd>
                 </div>
               </dl>
             </header>
@@ -304,8 +304,8 @@ export default function HomePage() {
               ))}
             </div>
             <p className={styles.strategyCaveat} data-motion-strategy-caveat>
-              These are strategy directions and research interests. They are not a list of
-              current holdings.
+              These describe strategy roles and research themes. The verified snapshot
+              above remains the source of truth for current holdings.
             </p>
           </div>
         </section>

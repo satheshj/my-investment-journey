@@ -16,7 +16,7 @@ export const startingContext = [
 ] as const;
 
 export const portfolioPublication = {
-  asOf: "26 August 2026",
+  asOf: "15 September 2026",
   disclosure: "Allocation percentages only",
   hasPublishedSnapshot: publishedPortfolioAllocation.holdings.length > 0,
   hiddenFields: "Quantities, prices, cost basis, and monetary values",
@@ -59,12 +59,12 @@ export const strategyDirections = [
   {
     bucket: "Core market direction",
     status: "Strategy direction",
-    items: ["Nifty 50", "Vanguard S&P 500 ETF (VOO)"],
+    items: ["Broad Indian index exposure", "Broad US index exposure"],
   },
   {
     bucket: "Thematic research",
     status: "Research interest",
-    items: ["Procure Space ETF (UFO)", "Indian defence and aerospace exposure"],
+    items: ["Space-industry exposure", "Indian defence exposure"],
   },
 ] as const;
 

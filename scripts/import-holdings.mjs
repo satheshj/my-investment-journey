@@ -198,6 +198,51 @@ function parseUsHoldings(source) {
   return { asOf: usSnapshotDate(source.name), holdings };
 }
 
+function parseIndianEtfs(source) {
+  const rows = parseCsv(source.text);
+  const title = rows[0]?.find((cell) => cell.includes("Indian ETF Holdings"));
+  const dateMatch = title?.match(/\b([A-Z][a-z]{2})\s+(\d{1,2})\s+(\d{4})$/);
+
+  if (!dateMatch) {
+    fail("the Indian ETF export has no recognized snapshot date");
+  }
+
+  const headerIndex = rows.findIndex((row) => row[0] === "ETF Name");
+
+  if (headerIndex < 0) {
+    fail("the Indian ETF export header was not found");
+  }
+
+  const holdings = rows
+    .slice(headerIndex + 1)
+    .filter((row) => row[0])
+    .map((row, index) => {
+      const name = row[0].trim();
+      const mapping = mappedInstrument(name);
+      const quantity = requiredDecimal(row[1], `Indian ETF row ${index + 1} quantity`);
+      const marketPrice = requiredDecimal(
+        row[2],
+        `Indian ETF row ${index + 1} market price`,
+      );
+
+      return {
+        currency: "INR",
+        instrumentId: mapping.instrumentId,
+        marketValue: quantity.mul(marketPrice),
+        strategyBucket: mapping.strategyBucket,
+      };
+    });
+
+  if (holdings.length === 0) {
+    fail("the Indian ETF export contains no holdings");
+  }
+
+  return {
+    asOf: isoDate(dateMatch[3], dateMatch[1], Number(dateMatch[2])),
+    holdings,
+  };
+}
+
 function sha256(text) {
   return createHash("sha256").update(text, "utf8").digest("hex");
 }
@@ -248,12 +293,21 @@ function apportionPercentages(holdings) {
   }));
 }
 
-export function buildPublishedAllocation({ mutualFundSource, usSource }) {
+export function buildPublishedAllocation({
+  indianEtfSource,
+  mutualFundSource,
+  usSource,
+}) {
   const mutualFunds = parseMutualFunds(mutualFundSource);
   const usHoldings = parseUsHoldings(usSource);
+  const indianEtfs = indianEtfSource ? parseIndianEtfs(indianEtfSource) : undefined;
 
   if (mutualFunds.asOf !== usHoldings.asOf) {
     fail(`snapshot dates differ (${mutualFunds.asOf} and ${usHoldings.asOf})`);
+  }
+
+  if (indianEtfs && mutualFunds.asOf !== indianEtfs.asOf) {
+    fail(`snapshot dates differ (${mutualFunds.asOf} and ${indianEtfs.asOf})`);
   }
 
   const fx = portfolioImportConfig.fxRatesBySnapshotDate[mutualFunds.asOf];
@@ -264,6 +318,10 @@ export function buildPublishedAllocation({ mutualFundSource, usSource }) {
 
   const holdings = [
     ...mutualFunds.holdings.map((holding) => ({
+      ...holding,
+      valueInBaseCurrency: holding.marketValue,
+    })),
+    ...(indianEtfs?.holdings ?? []).map((holding) => ({
       ...holding,
       valueInBaseCurrency: holding.marketValue,
     })),
@@ -301,6 +359,14 @@ export function buildPublishedAllocation({ mutualFundSource, usSource }) {
           label: "mutual-funds-export",
           sha256: sha256(mutualFundSource.text),
         },
+        ...(indianEtfSource
+          ? [
+              {
+                label: "indian-etf-export",
+                sha256: sha256(indianEtfSource.text),
+              },
+            ]
+          : []),
         { label: "us-portfolio-export", sha256: sha256(usSource.text) },
       ],
     },
@@ -328,12 +394,15 @@ async function findSources(sourceDirectory) {
     source.text.includes("Mutual Funds Holdings"),
   );
   const usSource = sources.find((source) => source.text.startsWith("Stock Name,"));
+  const indianEtfSource = sources.find((source) =>
+    source.text.includes("Indian ETF Holdings"),
+  );
 
   if (!mutualFundSource || !usSource) {
     fail("one mutual-fund export and one US portfolio export are required");
   }
 
-  return { mutualFundSource, usSource };
+  return { indianEtfSource, mutualFundSource, usSource };
 }
 
 async function main() {

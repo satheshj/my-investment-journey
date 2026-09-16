@@ -26,14 +26,19 @@ const publicFxBasisSchema = z
     sourceLabel: z.string().trim().min(1),
     sourceUrl: z.string().url(),
     toCurrency: currencyCodeSchema,
+    rate: positiveDecimalStringSchema.optional(),
   })
   .strict();
 
 export const publishedAllocationArtifactSchema = z
   .object({
-    schemaVersion: z.literal(1),
+    schemaVersion: z.union([z.literal(1), z.literal(2)]),
     id: projectIdSchema,
     asOf: isoDateSchema,
+    snapshotWindow: z
+      .object({ oldest: isoDateSchema, newest: isoDateSchema })
+      .strict()
+      .optional(),
     calculationCurrency: currencyCodeSchema,
     completeness: z.enum(["complete", "partial"]),
     calculationBasis: z
@@ -45,7 +50,7 @@ export const publishedAllocationArtifactSchema = z
     holdings: z.array(publishedHoldingSchema).min(1),
     provenance: z
       .object({
-        generator: z.literal("portfolio-import-v1"),
+        generator: z.enum(["portfolio-import-v1", "portfolio-drive-import-v2"]),
         sources: z
           .array(
             z
@@ -61,6 +66,17 @@ export const publishedAllocationArtifactSchema = z
   })
   .strict()
   .superRefine((artifact, context) => {
+    if (
+      artifact.snapshotWindow &&
+      (artifact.snapshotWindow.oldest !== artifact.asOf ||
+        artifact.snapshotWindow.newest < artifact.snapshotWindow.oldest)
+    ) {
+      context.addIssue({
+        code: "custom",
+        message: "snapshotWindow must begin on asOf and end no earlier",
+        path: ["snapshotWindow"],
+      });
+    }
     const seenInstrumentIds = new Set<string>();
 
     artifact.holdings.forEach((holding, index) => {
@@ -96,6 +112,7 @@ export type PublishedAllocationArtifact = z.infer<
 export type PublishedPortfolioAllocation = PublicPortfolioAllocation & {
   calculationBasis: PublishedAllocationArtifact["calculationBasis"];
   id: string;
+  snapshotWindow?: PublishedAllocationArtifact["snapshotWindow"];
 };
 
 export function hydratePublishedAllocation(
@@ -112,6 +129,7 @@ export function hydratePublishedAllocation(
     id: artifact.id,
     asOf: artifact.asOf,
     calculationBasis: artifact.calculationBasis,
+    ...(artifact.snapshotWindow ? { snapshotWindow: artifact.snapshotWindow } : {}),
     calculationCurrency: artifact.calculationCurrency,
     completeness: artifact.completeness,
     holdings: artifact.holdings.map((holding) => {

@@ -1,0 +1,80 @@
+{
+  "generatedAt": "2026-09-16T05:12:00.705Z",
+  "cadence": "weekly",
+  "coverage": "indian-and-global-markets",
+  "sourceCount": 6,
+  "articles": [
+    {
+      "id": "damodaran-2026-09-02-1",
+      "title": "The Scaling and Profitability Trade off: Venture Capital's Weakest Link!",
+      "url": "https://aswathdamodaran.blogspot.com/2026/09/the-scaling-and-profitability-trade-off.html",
+      "source": "Musings on Markets",
+      "sourceRegion": "Global",
+      "publishedAt": "2026-09-02T17:39:51.000Z",
+      "topic": "Valuation",
+      "keyNote": "It is undeniable technology companies have found their most hospitable setting in the United States and while there are many reasons for the US dominance of technology, easier access to capital for young businesses...",
+      "notableFact": "Ferrari, for instance, sells only a few thousand cars every year, but with an operating profit margin in excess of 20%.",
+      "portfolioLens": "Ask whether the story changes expected cash flows, risk, or merely the price investors are willing to pay."
+    },
+    {
+      "id": "liberty-street-2026-08-19-2",
+      "title": "Has Broader Stock Market Participation Changed How Interest Rates Affect the Economy?",
+      "url": "https://libertystreeteconomics.newyorkfed.org/2026/08/has-broader-stock-market-participation-changed-how-interest-rates-affect-the-economy/",
+      "source": "Liberty Street Economics",
+      "sourceRegion": "United States",
+      "publishedAt": "2026-08-19T11:00:00.000Z",
+      "topic": "Rates and credit",
+      "keyNote": "Morelli Stock market participation in the U.S.",
+      "notableFact": "In the mid-1980s, fewer than 30 percent of households held equity.",
+      "portfolioLens": "Check how borrowing costs, discount rates, and balance-sheet strength affect the investments you already hold."
+    },
+    {
+      "id": "zerodha-daily-brief-2026-09-10-3",
+      "title": "SECI wants to make India’s industries electric",
+      "url": "https://thedailybrief.zerodha.com/p/seci-industries-electrification-green-energy-auto-ancillary-aerospace-defence",
+      "source": "The Daily Brief by Zerodha",
+      "sourceRegion": "India",
+      "publishedAt": "2026-09-10T01:38:31.000Z",
+      "topic": "Indian markets",
+      "keyNote": "SECI wants to make India’s industries electric Why is SECI pooling renewable power demand for factories?",
+      "notableFact": "While grid cleanup handles basic electricity, Indian factories rely on fossil fuels for heating, with electricity supplying under 19% of their energy.",
+      "portfolioLens": "Ask whether the development changes an Indian business you own, your domestic diversification, or only the week's narrative."
+    },
+    {
+      "id": "fred-blog-2026-09-14-4",
+      "title": "Measuring money with M2",
+      "url": "https://fredblog.stlouisfed.org/2026/09/measuring-money-with-m2/",
+      "source": "FRED Blog",
+      "sourceRegion": "United States",
+      "publishedAt": "2026-09-14T13:00:00.000Z",
+      "topic": "Rates and credit",
+      "keyNote": "The Fed’s monetary aggregates measure the amount of money in the economy.",
+      "notableFact": "As of June 2026, M2 amounted to $23 trillion.",
+      "portfolioLens": "Check how borrowing costs, discount rates, and balance-sheet strength affect the investments you already hold."
+    },
+    {
+      "id": "ecb-blog-2026-08-31-5",
+      "title": "Big tech, big debt: when US tech giants tap the euro area bond market",
+      "url": "https://www.ecb.europa.eu/press/blog/date/2026/html/ecb.blog20260831~dac6a37e73.en.html",
+      "source": "The ECB Blog",
+      "sourceRegion": "Europe",
+      "publishedAt": "2026-08-31T09:00:00.000Z",
+      "topic": "Rates and credit",
+      "keyNote": "US tech giants are increasingly tapping the euro area bond market to fund their investments.",
+      "notableFact": null,
+      "portfolioLens": "Check how borrowing costs, discount rates, and balance-sheet strength affect the investments you already hold."
+    },
+    {
+      "id": "sebi-2026-09-09-6",
+      "title": "Successful launch of “Demat 2.0” Pilot project for Tokenised Corporate Bonds [FAQ]",
+      "url": "https://www.sebi.gov.in/media-and-notifications/press-releases/sep-2026/successful-launch-of-demat-2-0-pilot-project-for-tokenised-corporate-bonds_104418.html",
+      "source": "SEBI",
+      "sourceRegion": "India",
+      "publishedAt": "2026-09-09T18:30:00.000Z",
+      "topic": "Indian market rules",
+      "keyNote": "Successful launch of “Demat 2.0” Pilot project for Tokenised Corporate Bonds [FAQ]",
+      "notableFact": null,
+      "portfolioLens": "Check whether this changes how an Indian holding is bought, disclosed, or safeguarded before treating it as market noise."
+    }
+  ]
+}

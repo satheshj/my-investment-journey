@@ -21,7 +21,9 @@ type AllocationStyle = CSSProperties & {
 
 const segmentToneByInstrument: Record<string, string> = {
   "ge-vernova": styles.segmentAccentSoft!,
+  "motilal-oswal-nifty-india-defence-etf": styles.segmentThematicSoft!,
   nvidia: styles.segmentAccent!,
+  "procure-space-etf": styles.segmentThematic!,
   "uti-nifty-50-index-fund": styles.segmentInk!,
   "vanguard-sp-500-etf": styles.segmentNeutral!,
 };
@@ -45,6 +47,16 @@ function labelInstrumentType(value: string) {
   return labels[value] ?? value;
 }
 
+function labelStrategyBucket(value: string) {
+  const labels: Record<string, string> = {
+    core: "Core",
+    experimental: "Experimental",
+    thematic: "Thematic",
+  };
+
+  return labels[value] ?? value;
+}
+
 function allocationFor(
   predicate: (holding: (typeof publishedPortfolioAllocation.holdings)[number]) => boolean,
 ) {
@@ -60,9 +72,19 @@ export default function PortfolioPage() {
   const experimentalAllocation = allocationFor(
     (holding) => holding.strategyBucket === "experimental",
   );
-  const indiaAllocation = allocationFor((holding) => holding.listingCountry === "IN");
-  const usAllocation = allocationFor((holding) => holding.listingCountry === "US");
-  const fxBasis = snapshot.calculationBasis.fx[0];
+  const thematicAllocation = allocationFor(
+    (holding) => holding.strategyBucket === "thematic",
+  );
+  const fxBasis = snapshot.calculationBasis.fx;
+  const countries = [
+    ...new Set(snapshot.holdings.map((holding) => holding.listingCountry)),
+  ];
+  const countryNames = new Intl.DisplayNames("en", { type: "region" });
+  const bucketDescriptions = {
+    core: `${snapshot.holdings.filter((holding) => holding.strategyBucket === "core").length} holdings`,
+    thematic: `${snapshot.holdings.filter((holding) => holding.strategyBucket === "thematic").length} holdings`,
+    experimental: `${snapshot.holdings.filter((holding) => holding.strategyBucket === "experimental").length} holdings`,
+  };
 
   return (
     <PortfolioMotion>
@@ -74,8 +96,8 @@ export default function PortfolioPage() {
             </p>
             <h1 data-portfolio-hero-item>Portfolio</h1>
             <p className={styles.heroCopy} data-portfolio-hero-item>
-              Four real holdings, shown as allocation percentages while balances and
-              quantities stay private.
+              {snapshot.holdings.length} real holdings, shown as allocation percentages
+              while balances and quantities stay private.
             </p>
           </div>
         </header>
@@ -83,7 +105,13 @@ export default function PortfolioPage() {
         <dl className={styles.snapshotStrip} data-portfolio-hero-item>
           <div>
             <dt>As of</dt>
-            <dd>{formatDate(snapshot.asOf)}</dd>
+            <dd>
+              {formatDate(snapshot.asOf)}
+              {snapshot.snapshotWindow &&
+              snapshot.snapshotWindow.newest !== snapshot.snapshotWindow.oldest
+                ? ` to ${formatDate(snapshot.snapshotWindow.newest)}`
+                : ""}
+            </dd>
           </div>
           <div>
             <dt>Snapshot</dt>
@@ -106,7 +134,7 @@ export default function PortfolioPage() {
             />
           </div>
           <figcaption>
-            Four holdings, grouped without exposing the account values beneath them.
+            Holdings grouped without exposing the account values beneath them.
           </figcaption>
         </figure>
 
@@ -157,7 +185,7 @@ export default function PortfolioPage() {
                   <h3>{holding.name}</h3>
                   <p>
                     {labelInstrumentType(holding.instrumentType)}.{" "}
-                    {holding.strategyBucket === "core" ? "Core" : "Experimental"}.
+                    {labelStrategyBucket(holding.strategyBucket)}.
                   </p>
                 </div>
                 <data value={holding.allocationPercent}>
@@ -170,43 +198,46 @@ export default function PortfolioPage() {
 
         <section className={styles.strategySection} aria-labelledby="strategy-heading">
           <header className={styles.sectionHeader} data-portfolio-heading>
-            <h2 id="strategy-heading">Core is becoming the center.</h2>
+            <h2 id="strategy-heading">Strategy at a glance.</h2>
             <p>
-              Broad-market exposure now outweighs the individual-stock experiments that
-              helped shape the strategy.
+              The current mix of core, thematic, and experimental holdings, calculated
+              from this snapshot.
             </p>
           </header>
           <div className={styles.strategyComposition}>
             <article className={styles.coreBlock} data-portfolio-strategy>
               <p>Core</p>
               <strong>{coreAllocation}%</strong>
-              <span>Nifty 50 and the S&amp;P 500</span>
+              <span>{bucketDescriptions.core}</span>
+            </article>
+            <article className={styles.thematicBlock} data-portfolio-strategy>
+              <p>Thematic</p>
+              <strong>{thematicAllocation}%</strong>
+              <span>{bucketDescriptions.thematic}</span>
             </article>
             <article className={styles.experimentalBlock} data-portfolio-strategy>
               <p>Experimental</p>
               <strong>{experimentalAllocation}%</strong>
-              <span>Two individual equities</span>
+              <span>{bucketDescriptions.experimental}</span>
             </article>
           </div>
         </section>
 
         <section className={styles.geographySection} aria-labelledby="geography-heading">
           <header className={styles.sectionHeader} data-portfolio-heading>
-            <h2 id="geography-heading">Split across two markets.</h2>
+            <h2 id="geography-heading">Where the holdings are listed.</h2>
             <p>
-              The current snapshot is nearly balanced between Indian and US-listed
-              exposure.
+              Listing-country exposure based on each holding&apos;s share of the
+              portfolio.
             </p>
           </header>
           <dl className={styles.geographyList}>
-            <div data-portfolio-geography>
-              <dt>India</dt>
-              <dd>{indiaAllocation}%</dd>
-            </div>
-            <div data-portfolio-geography>
-              <dt>United States</dt>
-              <dd>{usAllocation}%</dd>
-            </div>
+            {countries.map((country) => (
+              <div data-portfolio-geography key={country}>
+                <dt>{countryNames.of(country) ?? country}</dt>
+                <dd>{allocationFor((holding) => holding.listingCountry === country)}%</dd>
+              </div>
+            ))}
           </dl>
         </section>
 
@@ -223,12 +254,19 @@ export default function PortfolioPage() {
               private.
             </p>
           </div>
-          {fxBasis ? (
-            <p className={styles.calculationNote}>
-              USD holdings use the latest available reference rate before the snapshot,
-              dated {formatDate(fxBasis.asOf)}. Source:{" "}
-              <a href={fxBasis.sourceUrl}>{fxBasis.sourceLabel}</a>.
-            </p>
+          {fxBasis.length > 0 ? (
+            <div className={styles.calculationNote}>
+              <p>Foreign-currency holdings use these reference rates:</p>
+              <ul>
+                {fxBasis.map((rate) => (
+                  <li key={rate.fromCurrency}>
+                    {rate.fromCurrency} to {rate.toCurrency}: {rate.rate ?? "recorded"},
+                    dated {formatDate(rate.asOf)}. Source:{" "}
+                    <a href={rate.sourceUrl}>{rate.sourceLabel}</a>.
+                  </li>
+                ))}
+              </ul>
+            </div>
           ) : null}
         </section>
       </main>

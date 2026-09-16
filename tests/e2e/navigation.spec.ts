@@ -272,3 +272,23 @@ test("portfolio publishes percentages without currency amounts or narrow overflo
     expect(hasHorizontalOverflow).toBe(false);
   }
 });
+
+test("portfolio strategy values stay inside their columns", async ({ page }) => {
+  await page.emulateMedia({ reducedMotion: "reduce" });
+
+  for (const width of [900, 1440]) {
+    await page.setViewportSize({ height: 1000, width });
+    await page.goto("/portfolio/");
+
+    const strategyCards = page.locator(
+      'section[aria-labelledby="strategy-heading"] article',
+    );
+
+    await expect(strategyCards).toHaveCount(3);
+    expect(
+      await strategyCards.evaluateAll((cards) =>
+        cards.every((card) => card.scrollWidth <= card.clientWidth),
+      ),
+    ).toBe(true);
+  }
+});

@@ -13,9 +13,9 @@ describe("published portfolio allocation", () => {
       new Decimal(0),
     );
 
-    expect(artifact.asOf).toBe("2026-08-26");
+    expect(artifact.asOf).toBe("2026-09-15");
     expect(artifact.completeness).toBe("complete");
-    expect(artifact.holdings).toHaveLength(4);
+    expect(artifact.holdings).toHaveLength(6);
     expect(total.equals(100)).toBe(true);
   });
 
@@ -25,7 +25,9 @@ describe("published portfolio allocation", () => {
     expect(publishedPortfolioAllocation.holdings.map((holding) => holding.name)).toEqual([
       "UTI Nifty 50 Index Fund",
       "Vanguard S&P 500 ETF",
+      "Procure Space ETF",
       "NVIDIA Corporation",
+      "Motilal Oswal Nifty India Defence ETF",
       "GE Vernova LLC",
     ]);
     expect(serialized).not.toMatch(
