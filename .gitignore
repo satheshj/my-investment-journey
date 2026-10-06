@@ -1,0 +1,21 @@
+# Private financial source files
+/private/imports/
+/docs/holdings/
+
+# Local secrets
+.env*
+!.env.example
+
+# Dependencies and build output
+/node_modules/
+/.next/
+/out/
+/coverage/
+/playwright-report/
+/test-results/
+/.playwright-mcp/
+debug.log
+
+# Tool caches
+*.tsbuildinfo
+.eslintcache

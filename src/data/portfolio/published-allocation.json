@@ -1,0 +1,68 @@
+{
+  "schemaVersion": 1,
+  "id": "portfolio-allocation-2026-09-15",
+  "asOf": "2026-09-15",
+  "calculationCurrency": "INR",
+  "completeness": "complete",
+  "calculationBasis": {
+    "method": "base_currency_market_value",
+    "fx": [
+      {
+        "asOf": "2026-09-11",
+        "fromCurrency": "USD",
+        "sourceLabel": "MSEI reference-rate archive",
+        "sourceUrl": "https://www.msei.in/markets/currency/historical-data/rbireferenceratearchives",
+        "toCurrency": "INR"
+      }
+    ]
+  },
+  "holdings": [
+    {
+      "allocationPercent": "41.37",
+      "instrumentId": "uti-nifty-50-index-fund",
+      "strategyBucket": "core"
+    },
+    {
+      "allocationPercent": "27.38",
+      "instrumentId": "vanguard-sp-500-etf",
+      "strategyBucket": "core"
+    },
+    {
+      "allocationPercent": "12.10",
+      "instrumentId": "procure-space-etf",
+      "strategyBucket": "thematic"
+    },
+    {
+      "allocationPercent": "7.36",
+      "instrumentId": "nvidia",
+      "strategyBucket": "experimental"
+    },
+    {
+      "allocationPercent": "6.16",
+      "instrumentId": "motilal-oswal-nifty-india-defence-etf",
+      "strategyBucket": "thematic"
+    },
+    {
+      "allocationPercent": "5.63",
+      "instrumentId": "ge-vernova",
+      "strategyBucket": "experimental"
+    }
+  ],
+  "provenance": {
+    "generator": "portfolio-import-v1",
+    "sources": [
+      {
+        "label": "mutual-funds-export",
+        "sha256": "ddfc9b5b2932364325a15f40b265305c05351dfdb3c7085861fec95f01d3ae0c"
+      },
+      {
+        "label": "indian-etf-export",
+        "sha256": "a9617fbf45c09dfb53cfee879dfad8187ce5df1961db95fb9cd2553ee37ca9f7"
+      },
+      {
+        "label": "us-portfolio-export",
+        "sha256": "ea6ffdfde75afeb290fab53c057712189df87de54b03ef4f22b1f94720944330"
+      }
+    ]
+  }
+}

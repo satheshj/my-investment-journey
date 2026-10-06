@@ -1,0 +1,47 @@
+[
+  {
+    "id": "ge-vernova",
+    "name": "GE Vernova LLC",
+    "instrumentType": "equity",
+    "listingCountry": "US",
+    "tradingCurrency": "USD"
+  },
+  {
+    "id": "nvidia",
+    "name": "NVIDIA Corporation",
+    "instrumentType": "equity",
+    "listingCountry": "US",
+    "tradingCurrency": "USD"
+  },
+  {
+    "id": "motilal-oswal-nifty-india-defence-etf",
+    "name": "Motilal Oswal Nifty India Defence ETF",
+    "symbol": "MODEFENCE",
+    "instrumentType": "etf",
+    "listingCountry": "IN",
+    "exchange": "NSE",
+    "tradingCurrency": "INR"
+  },
+  {
+    "id": "procure-space-etf",
+    "name": "Procure Space ETF",
+    "symbol": "UFO",
+    "instrumentType": "etf",
+    "listingCountry": "US",
+    "tradingCurrency": "USD"
+  },
+  {
+    "id": "uti-nifty-50-index-fund",
+    "name": "UTI Nifty 50 Index Fund",
+    "instrumentType": "mutual_fund",
+    "listingCountry": "IN",
+    "tradingCurrency": "INR"
+  },
+  {
+    "id": "vanguard-sp-500-etf",
+    "name": "Vanguard S&P 500 ETF",
+    "instrumentType": "etf",
+    "listingCountry": "US",
+    "tradingCurrency": "USD"
+  }
+]

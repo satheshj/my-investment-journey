@@ -1,0 +1,113 @@
+{
+  "$schema": "https://design-tokens.github.io/community-group/format/",
+  "core": {
+    "background": {
+      "value": "#090f05",
+      "role": "background",
+      "name": "color-black"
+    },
+    "text-primary": {
+      "value": "#ffffff",
+      "role": "text-primary",
+      "name": "theme-color"
+    },
+    "text-muted": {
+      "value": "#4a5b38",
+      "role": "text-muted",
+      "name": "color-sage-5"
+    },
+    "surface": {
+      "value": "#3f7308",
+      "role": "surface",
+      "name": "color-moss"
+    }
+  },
+  "status": {
+    "success": {
+      "value": "#18280e",
+      "role": "success",
+      "name": "color-forest"
+    },
+    "warning": {
+      "value": "#ebe46a",
+      "role": "warning",
+      "name": "color-sun"
+    },
+    "danger": {
+      "value": "#331b09",
+      "role": "danger",
+      "name": "color-earth"
+    }
+  },
+  "extended": {
+    "color-sage-3": {
+      "value": "#d8e5ca",
+      "role": "unknown",
+      "name": "color-sage-3"
+    },
+    "swiper-preloader-color": {
+      "value": "#000000",
+      "role": "unknown",
+      "name": "swiper-preloader-color"
+    },
+    "color-lemongrass": {
+      "value": "#b2eb76",
+      "role": "unknown",
+      "name": "color-lemongrass"
+    },
+    "color-sage-1": {
+      "value": "#f4faed",
+      "role": "unknown",
+      "name": "color-sage-1"
+    },
+    "color-gray-500": {
+      "value": "#6a7282",
+      "role": "unknown",
+      "name": "color-gray-500"
+    },
+    "tw-ring-color": {
+      "value": "#155dfc",
+      "role": "info",
+      "name": "tw-ring-color"
+    },
+    "color-rock": {
+      "value": "#a0967a",
+      "role": "unknown",
+      "name": "color-rock"
+    },
+    "color-sage-4": {
+      "value": "#b3c5a0",
+      "role": "unknown",
+      "name": "color-sage-4"
+    },
+    "color-gray-300": {
+      "value": "#d1d5dc",
+      "role": "unknown",
+      "name": "color-gray-300"
+    },
+    "tw-prose-quote-borders": {
+      "value": "#e5e7eb",
+      "role": "unknown",
+      "name": "tw-prose-quote-borders"
+    },
+    "tw-prose-invert-quote-borders": {
+      "value": "#364153",
+      "role": "unknown",
+      "name": "tw-prose-invert-quote-borders"
+    },
+    "color-sand": {
+      "value": "#f2dfac",
+      "role": "unknown",
+      "name": "color-sand"
+    },
+    "color-red-500": {
+      "value": "#fb2c36",
+      "role": "unknown",
+      "name": "color-red-500"
+    }
+  },
+  "meta": {
+    "theme": "dark",
+    "extracted": "2026-08-27"
+  }
+}
