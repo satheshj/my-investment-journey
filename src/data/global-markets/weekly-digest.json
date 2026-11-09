@@ -1,20 +1,20 @@
 {
-  "generatedAt": "2026-11-02T07:58:19.728Z",
+  "generatedAt": "2026-11-09T08:26:59.970Z",
   "cadence": "weekly",
   "coverage": "indian-and-global-markets",
   "sourceCount": 6,
   "articles": [
     {
-      "id": "damodaran-2026-10-28-1",
-      "title": "The Anthropic Prospectus Arrives: My (but not the) IPO valuation!",
-      "url": "https://aswathdamodaran.blogspot.com/2026/10/the-anthropic-prospectus-arrives-ipo.html",
+      "id": "damodaran-2026-11-03-1",
+      "title": "The Anthropic Feedback Loop: The Cost of Capital Delusion and Diversion!",
+      "url": "https://aswathdamodaran.blogspot.com/2026/11/the-anthropic-feedback-loop-cost-of.html",
       "source": "Musings on Markets",
       "sourceRegion": "Global",
-      "publishedAt": "2026-10-28T18:07:02.000Z",
-      "topic": "Valuation",
-      "keyNote": "I am a dabbler, by nature, moving on from topic to topic, but this year, I have spent more time than usual on AI, but that is because it seems to be part of...",
-      "notableFact": "The good news on customer composition is that the number of enterprises that spend more than $1 million a year on Claude increased to 1900.",
-      "portfolioLens": "Ask whether the story changes expected cash flows, risk, or merely the price investors are willing to pay."
+      "publishedAt": "2026-11-03T20:11:36.000Z",
+      "topic": "Indian markets",
+      "keyNote": "I knew that my post on Anthropic would draw strong reactions, when I made it public last week.",
+      "notableFact": "You will notice that the equity value at $1.45 trillion is slightly lower than my prior estimate of $1.475 trillion.",
+      "portfolioLens": "Ask whether the development changes an Indian business you own, your domestic diversification, or only the week's narrative."
     },
     {
       "id": "zerodha-daily-brief-2026-10-29-2",
@@ -29,16 +29,16 @@
       "portfolioLens": "Ask whether the development changes an Indian business you own, your domestic diversification, or only the week's narrative."
     },
     {
-      "id": "liberty-street-2026-10-30-3",
-      "title": "Evaluating New LinkedIn Labor Market Tightness Indicators",
-      "url": "https://libertystreeteconomics.newyorkfed.org/2026/10/evaluating-new-linkedin-labor-market-tightness-indicators/",
+      "id": "liberty-street-2026-11-04-3",
+      "title": "How Market Position Shapes Credit Card Interest Rates",
+      "url": "https://libertystreeteconomics.newyorkfed.org/2026/11/how-market-position-shapes-credit-card-interest-rates/",
       "source": "Liberty Street Economics",
       "sourceRegion": "United States",
-      "publishedAt": "2026-10-30T14:00:00.000Z",
-      "topic": "Indian markets",
-      "keyNote": "Weber Measures of labor market tightness (LMT) describe how difficult it is for firms to find workers.",
-      "notableFact": "For example, an index of 1.05 indicates a hiring rate that is 5 percent higher than the average month in 2016.",
-      "portfolioLens": "Ask whether the development changes an Indian business you own, your domestic diversification, or only the week's narrative."
+      "publishedAt": "2026-11-04T12:00:00.000Z",
+      "topic": "Rates and credit",
+      "keyNote": "Morelli Why is it that two borrowers who look much alike can be offered very different rates when applying for a credit card?",
+      "notableFact": "Data on 14 million newly issued cards show that when a lender’s funding costs decline.",
+      "portfolioLens": "Check how borrowing costs, discount rates, and balance-sheet strength affect the investments you already hold."
     },
     {
       "id": "fred-blog-2026-10-15-4",
@@ -65,14 +65,14 @@
       "portfolioLens": "Treat one macro release as context, not as a reason to rebuild a long-term portfolio in a single week."
     },
     {
-      "id": "sebi-2026-10-26-6",
-      "title": "Extension of timeline for compliance with terms and conditions by Debenture Trustees (DTs) for carrying out activities outside the purview of SEBI",
-      "url": "https://www.sebi.gov.in/legal/circulars/oct-2026/extension-of-timeline-for-compliance-with-terms-and-conditions-by-debenture-trustees-dts-for-carrying-out-activities-outside-the-purview-of-sebi_105454.html",
+      "id": "sebi-2026-11-05-6",
+      "title": "Commencement of SEBI (Settlement of Administrative and Civil Proceedings) Regulations, 2026",
+      "url": "https://www.sebi.gov.in/media-and-notifications/press-releases/nov-2026/commencement-of-sebi-settlement-of-administrative-and-civil-proceedings-regulations-2026_105680.html",
       "source": "SEBI",
       "sourceRegion": "India",
-      "publishedAt": "2026-10-26T18:30:00.000Z",
+      "publishedAt": "2026-11-05T18:30:00.000Z",
       "topic": "Indian market rules",
-      "keyNote": "Extension of timeline for compliance with terms and conditions by Debenture Trustees (DTs) for carrying out activities outside the purview of SEBI",
+      "keyNote": "Commencement of SEBI (Settlement of Administrative and Civil Proceedings) Regulations, 2026",
       "notableFact": null,
       "portfolioLens": "Check whether this changes how an Indian holding is bought, disclosed, or safeguarded before treating it as market noise."
     }
