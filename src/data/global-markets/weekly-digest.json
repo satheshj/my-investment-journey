@@ -1,8 +1,8 @@
 {
-  "generatedAt": "2026-11-09T08:26:59.970Z",
+  "generatedAt": "2026-11-16T08:20:18.341Z",
   "cadence": "weekly",
   "coverage": "indian-and-global-markets",
-  "sourceCount": 6,
+  "sourceCount": 5,
   "articles": [
     {
       "id": "damodaran-2026-11-03-1",
@@ -17,64 +17,64 @@
       "portfolioLens": "Ask whether the development changes an Indian business you own, your domestic diversification, or only the week's narrative."
     },
     {
-      "id": "zerodha-daily-brief-2026-10-29-2",
-      "title": "FDI in India: easy come, easy go?",
-      "url": "https://thedailybrief.zerodha.com/p/fdi-in-india-easy-come-easy-go",
+      "id": "zerodha-daily-brief-2026-11-11-2",
+      "title": "Taking stock of stock exchanges",
+      "url": "https://thedailybrief.zerodha.com/p/taking-stock-of-stock-exchanges",
       "source": "The Daily Brief by Zerodha",
       "sourceRegion": "India",
-      "publishedAt": "2026-10-29T01:40:17.000Z",
+      "publishedAt": "2026-11-11T01:43:33.000Z",
+      "topic": "Indian market rules",
+      "keyNote": "Taking stock of stock exchanges Reporting financial results side-by-side for the first time since NSE’s IPO, India’s two leading bourses saw quarterly revenues slip 8.5% to 11% following low volatility and disruptions from SEBI’s...",
+      "notableFact": "India’s two leading bourses saw quarterly revenues slip 8.5% to 11% following low volatility and disruptions from SEBI’s now-reversed Closing Auction Session.",
+      "portfolioLens": "Check whether this changes how an Indian holding is bought, disclosed, or safeguarded before treating it as market noise."
+    },
+    {
+      "id": "zerodha-daily-brief-2026-11-13-3",
+      "title": "India’s food inflation story gets worrisome",
+      "url": "https://thedailybrief.zerodha.com/p/indias-food-inflation-story-gets",
+      "source": "The Daily Brief by Zerodha",
+      "sourceRegion": "India",
+      "publishedAt": "2026-11-13T02:25:00.000Z",
       "topic": "Indian markets",
-      "keyNote": "FDI in India: easy come, easy go?",
-      "notableFact": "Net foreign direct investment into India reached a four-year high of $13.8 billion between April and August.",
+      "keyNote": "India’s food inflation story gets worrisome India's official retail inflation looks safe at 5.5%, but September's 7.7% spike in food inflation reveals a synchronized price surge across staples like pulses, cooking oil, and sugar.",
+      "notableFact": null,
       "portfolioLens": "Ask whether the development changes an Indian business you own, your domestic diversification, or only the week's narrative."
     },
     {
-      "id": "liberty-street-2026-11-04-3",
-      "title": "How Market Position Shapes Credit Card Interest Rates",
-      "url": "https://libertystreeteconomics.newyorkfed.org/2026/11/how-market-position-shapes-credit-card-interest-rates/",
+      "id": "liberty-street-2026-11-12-4",
+      "title": "Banking System Vulnerability: 2026 Update",
+      "url": "https://libertystreeteconomics.newyorkfed.org/2026/11/banking-system-vulnerability-2026-update/",
       "source": "Liberty Street Economics",
       "sourceRegion": "United States",
-      "publishedAt": "2026-11-04T12:00:00.000Z",
-      "topic": "Rates and credit",
-      "keyNote": "Morelli Why is it that two borrowers who look much alike can be offered very different rates when applying for a credit card?",
-      "notableFact": "Data on 14 million newly issued cards show that when a lender’s funding costs decline.",
-      "portfolioLens": "Check how borrowing costs, discount rates, and balance-sheet strength affect the investments you already hold."
+      "publishedAt": "2026-11-12T13:25:00.000Z",
+      "topic": "Indian markets",
+      "keyNote": "Eisenbach, and Fulvia Fringuellotti As in previous years, we provide in this post an update on the vulnerability of the U.S.",
+      "notableFact": "Defined as the aggregate amount of capital needed under a macroeconomic scenario to bring each bank’s Tier 1 common equity capital to at least 10 percent of its risk-weighted assets.",
+      "portfolioLens": "Ask whether the development changes an Indian business you own, your domestic diversification, or only the week's narrative."
     },
     {
-      "id": "fred-blog-2026-10-15-4",
-      "title": "Is the Treasury convenience yield rebounding?",
-      "url": "https://fred.stlouisfed.org/blog/2026/10/Is-the-Treasury-convenience-yield-rebounding",
-      "source": "FRED Blog",
-      "sourceRegion": "United States",
-      "publishedAt": "2026-10-15T13:00:00.000Z",
-      "topic": "Rates and credit",
-      "keyNote": "The spread between AAA corporate bonds and Treasuries has widened since October 2025, suggesting a partial recovery in the Treasury convenience yield.",
-      "notableFact": null,
-      "portfolioLens": "Check how borrowing costs, discount rates, and balance-sheet strength affect the investments you already hold."
-    },
-    {
-      "id": "ecb-blog-2026-10-21-5",
-      "title": "Resilience of the euro area economy – weathering one shock, preparing for the next",
-      "url": "https://www.ecb.europa.eu/press/blog/date/2026/html/ecb.blog20261021~1c5ec8f223.en.html",
+      "id": "ecb-blog-2026-11-12-5",
+      "title": "Reading the room: what Reddit tells us about retail investor sentiment",
+      "url": "https://www.ecb.europa.eu/press/blog/date/2026/html/ecb.blog20261112~a4c8b903d9.en.html",
       "source": "The ECB Blog",
       "sourceRegion": "Europe",
-      "publishedAt": "2026-10-21T09:00:00.000Z",
-      "topic": "Global economy",
-      "keyNote": "Despite a sharp rise in energy prices in early 2026, the euro area economy has proved resilient.",
+      "publishedAt": "2026-11-12T10:00:00.000Z",
+      "topic": "Growth and technology",
+      "keyNote": "Retail investors are increasingly becoming speculative traders, and many are using Reddit as a platform for discussions that reveal how sentiment evolves over time and across market conditions.",
       "notableFact": null,
-      "portfolioLens": "Treat one macro release as context, not as a reason to rebuild a long-term portfolio in a single week."
+      "portfolioLens": "Distinguish durable business improvement from an exciting narrative that may already be reflected in the price."
     },
     {
-      "id": "sebi-2026-11-05-6",
-      "title": "Commencement of SEBI (Settlement of Administrative and Civil Proceedings) Regulations, 2026",
-      "url": "https://www.sebi.gov.in/media-and-notifications/press-releases/nov-2026/commencement-of-sebi-settlement-of-administrative-and-civil-proceedings-regulations-2026_105680.html",
-      "source": "SEBI",
-      "sourceRegion": "India",
-      "publishedAt": "2026-11-05T18:30:00.000Z",
-      "topic": "Indian market rules",
-      "keyNote": "Commencement of SEBI (Settlement of Administrative and Civil Proceedings) Regulations, 2026",
+      "id": "fred-blog-2026-10-19-6",
+      "title": "Which businesses are using AI technology?",
+      "url": "https://fred.stlouisfed.org/blog/2026/10/which-businesses-are-using-ai-technology",
+      "source": "FRED Blog",
+      "sourceRegion": "United States",
+      "publishedAt": "2026-10-19T13:00:00.000Z",
+      "topic": "Growth and technology",
+      "keyNote": "More than half of all businesses paid for an artificial intelligence (AI) product or service.",
       "notableFact": null,
-      "portfolioLens": "Check whether this changes how an Indian holding is bought, disclosed, or safeguarded before treating it as market noise."
+      "portfolioLens": "Distinguish durable business improvement from an exciting narrative that may already be reflected in the price."
     }
   ]
 }
