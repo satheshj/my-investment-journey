@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-16T08:20:18.341Z",
+  "generatedAt": "2026-11-23T09:31:21.079Z",
   "cadence": "weekly",
   "coverage": "indian-and-global-markets",
   "sourceCount": 5,
@@ -17,19 +17,31 @@
       "portfolioLens": "Ask whether the development changes an Indian business you own, your domestic diversification, or only the week's narrative."
     },
     {
-      "id": "zerodha-daily-brief-2026-11-11-2",
-      "title": "Taking stock of stock exchanges",
-      "url": "https://thedailybrief.zerodha.com/p/taking-stock-of-stock-exchanges",
+      "id": "zerodha-daily-brief-2026-11-20-2",
+      "title": "Is GTA VI the last hope of a struggling industry?",
+      "url": "https://thedailybrief.zerodha.com/p/is-gta-vi-the-last-hope-of-gaming-industry",
       "source": "The Daily Brief by Zerodha",
       "sourceRegion": "India",
-      "publishedAt": "2026-11-11T01:43:33.000Z",
+      "publishedAt": "2026-11-20T02:05:09.000Z",
       "topic": "Indian market rules",
-      "keyNote": "Taking stock of stock exchanges Reporting financial results side-by-side for the first time since NSE’s IPO, India’s two leading bourses saw quarterly revenues slip 8.5% to 11% following low volatility and disruptions from SEBI’s...",
-      "notableFact": "India’s two leading bourses saw quarterly revenues slip 8.5% to 11% following low volatility and disruptions from SEBI’s now-reversed Closing Auction Session.",
+      "keyNote": "Is GTA VI the last hope of a struggling industry?",
+      "notableFact": "AAA development costs have skyrocketed past $1 billion and timelines now stretch over a decade.",
       "portfolioLens": "Check whether this changes how an Indian holding is bought, disclosed, or safeguarded before treating it as market noise."
     },
     {
-      "id": "zerodha-daily-brief-2026-11-13-3",
+      "id": "liberty-street-2026-11-17-3",
+      "title": "Does the Stock Market Stigmatize Banks that Borrow from the Fed?",
+      "url": "https://libertystreeteconomics.newyorkfed.org/2026/11/does-the-stock-market-stigmatize-banks-that-borrow-from-the-fed/",
+      "source": "Liberty Street Economics",
+      "sourceRegion": "United States",
+      "publishedAt": "2026-11-17T12:00:00.000Z",
+      "topic": "Rates and credit",
+      "keyNote": "Natalia Fischl-Lanzoni, Martin Hiti, and Asani Sarkar Banks may resist borrowing from the Federal Reserve during a panic if such borrowing is stigmatized (that is, viewed by the market as a sign of financial...",
+      "notableFact": "The line indicates the estimates, while the shaded areas indicate the 95 percent confidence interval of the estimates.",
+      "portfolioLens": "Check how borrowing costs, discount rates, and balance-sheet strength affect the investments you already hold."
+    },
+    {
+      "id": "zerodha-daily-brief-2026-11-13-4",
       "title": "India’s food inflation story gets worrisome",
       "url": "https://thedailybrief.zerodha.com/p/indias-food-inflation-story-gets",
       "source": "The Daily Brief by Zerodha",
@@ -38,18 +50,6 @@
       "topic": "Indian markets",
       "keyNote": "India’s food inflation story gets worrisome India's official retail inflation looks safe at 5.5%, but September's 7.7% spike in food inflation reveals a synchronized price surge across staples like pulses, cooking oil, and sugar.",
       "notableFact": null,
-      "portfolioLens": "Ask whether the development changes an Indian business you own, your domestic diversification, or only the week's narrative."
-    },
-    {
-      "id": "liberty-street-2026-11-12-4",
-      "title": "Banking System Vulnerability: 2026 Update",
-      "url": "https://libertystreeteconomics.newyorkfed.org/2026/11/banking-system-vulnerability-2026-update/",
-      "source": "Liberty Street Economics",
-      "sourceRegion": "United States",
-      "publishedAt": "2026-11-12T13:25:00.000Z",
-      "topic": "Indian markets",
-      "keyNote": "Eisenbach, and Fulvia Fringuellotti As in previous years, we provide in this post an update on the vulnerability of the U.S.",
-      "notableFact": "Defined as the aggregate amount of capital needed under a macroeconomic scenario to bring each bank’s Tier 1 common equity capital to at least 10 percent of its risk-weighted assets.",
       "portfolioLens": "Ask whether the development changes an Indian business you own, your domestic diversification, or only the week's narrative."
     },
     {
@@ -65,14 +65,14 @@
       "portfolioLens": "Distinguish durable business improvement from an exciting narrative that may already be reflected in the price."
     },
     {
-      "id": "fred-blog-2026-10-19-6",
-      "title": "Which businesses are using AI technology?",
-      "url": "https://fred.stlouisfed.org/blog/2026/10/which-businesses-are-using-ai-technology",
+      "id": "fred-blog-2026-11-09-6",
+      "title": "How the AIES helps BEA measure industry output",
+      "url": "https://fred.stlouisfed.org/blog/2026/11/how-the-aies-helps-bea-measure-industry-output",
       "source": "FRED Blog",
       "sourceRegion": "United States",
-      "publishedAt": "2026-10-19T13:00:00.000Z",
+      "publishedAt": "2026-11-09T14:00:00.000Z",
       "topic": "Growth and technology",
-      "keyNote": "More than half of all businesses paid for an artificial intelligence (AI) product or service.",
+      "keyNote": "Census Bureau's Annual Integrated Economic Survey (AIES) is one of the building blocks of the Bureau of Economic Analysis (BEA) industry accounts.",
       "notableFact": null,
       "portfolioLens": "Distinguish durable business improvement from an exciting narrative that may already be reflected in the price."
     }
